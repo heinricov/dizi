@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 export default function UsersAPIPage() {
   return (
@@ -11,6 +12,40 @@ export default function UsersAPIPage() {
           authentication, and user profiles.
         </p>
 
+        <h2 className="text-2xl font-semibold mb-4">Feature</h2>
+
+        <div className="space-y-8">
+          {/* List Users Endpoint */}
+          <div className="border rounded-lg p-6 mb-5">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-medium">Users</h3>
+              </div>
+              <Link
+                href="https://dizi.vercel.app/api/users"
+                className="bg-blue-100 text-blue-800 text-xs lg:text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-500 dark:text-yellow-300 mb-2"
+              >
+                Basic
+              </Link>
+            </div>
+            <p className="">
+              API Link:{" "}
+              <Link
+                href="https://dizi.vercel.app/api/users"
+                className="text-sm ml-3 text-blue-500 hover:underline"
+              >
+                https://dizi.vercel.app/api/users
+              </Link>
+            </p>
+            <p>
+              Data: <span className="text-sm ml-3"> 10</span>
+            </p>
+            <p>
+              Variabel: <span className="text-sm ml-3">id, Nama, Email</span>
+            </p>
+          </div>
+        </div>
+
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">Endpoints</h2>
 
@@ -18,7 +53,9 @@ export default function UsersAPIPage() {
             {/* List Users Endpoint */}
             <div className="border rounded-lg p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-medium">List Users</h3>
+                <div>
+                  <h3 className="text-xl font-medium">List Users</h3>
+                </div>
                 <code className="text-sm bg-accent px-2 py-1 rounded">
                   GET /users
                 </code>

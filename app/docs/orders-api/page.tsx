@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 export default function OrdersAPIPage() {
   return (
@@ -10,6 +11,42 @@ export default function OrdersAPIPage() {
           The Users API provides endpoints for managing user accounts,
           authentication, and user profiles.
         </p>
+        <h2 className="text-2xl font-semibold mb-4">Feature</h2>
+
+        <div className="space-y-8">
+          {/* List Users Endpoint */}
+          <div className="border rounded-lg p-6 mb-5">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-xl font-medium">Orders</h3>
+              </div>
+              <Link
+                href="https://dizi.vercel.app/api/orders"
+                className="bg-blue-100 text-blue-800 text-xs lg:text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-500 dark:text-yellow-300 mb-2"
+              >
+                Basic
+              </Link>
+            </div>
+            <p className="">
+              API Link:{" "}
+              <Link
+                href="https://dizi.vercel.app/api/orders"
+                className="text-sm ml-3 text-blue-500 hover:underline"
+              >
+                https://dizi.vercel.app/api/orders
+              </Link>
+            </p>
+            <p>
+              Data: <span className="text-sm ml-3"> 10</span>
+            </p>
+            <p>
+              Variabel:{" "}
+              <span className="text-sm ml-3">
+                id, tanggal, nama barang, jumlah barang, harga satuan
+              </span>
+            </p>
+          </div>
+        </div>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">Endpoints</h2>

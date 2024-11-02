@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "tanggal": "2024-10-01",
+    "nama_barang": "Topi Baseball",
+    "jumlah_barang": 2,
+    "harga_satuan": 50000
+  },
+  {
+    "id": 2,
+    "tanggal": "2024-10-02",
+    "nama_barang": "Kemeja Formal",
+    "jumlah_barang": 1,
+    "harga_satuan": 150000
+  },
+  {
+    "id": 3,
+    "tanggal": "2024-10-03",
+    "nama_barang": "Kaos Polos",
+    "jumlah_barang": 3,
+    "harga_satuan": 70000
+  },
+  {
+    "id": 4,
+    "tanggal": "2024-10-04",
+    "nama_barang": "Sweater Hoodie",
+    "jumlah_barang": 1,
+    "harga_satuan": 200000
+  },
+  {
+    "id": 5,
+    "tanggal": "2024-10-05",
+    "nama_barang": "Jaket Bomber",
+    "jumlah_barang": 2,
+    "harga_satuan": 250000
+  },
+  {
+    "id": 6,
+    "tanggal": "2024-10-06",
+    "nama_barang": "Celana Jeans",
+    "jumlah_barang": 1,
+    "harga_satuan": 180000
+  },
+  {
+    "id": 7,
+    "tanggal": "2024-10-07",
+    "nama_barang": "Celana Chino",
+    "jumlah_barang": 3,
+    "harga_satuan": 150000
+  },
+  {
+    "id": 8,
+    "tanggal": "2024-10-08",
+    "nama_barang": "Rok Mini",
+    "jumlah_barang": 2,
+    "harga_satuan": 120000
+  },
+  {
+    "id": 9,
+    "tanggal": "2024-10-09",
+    "nama_barang": "Sepatu Sneakers",
+    "jumlah_barang": 1,
+    "harga_satuan": 300000
+  },
+  {
+    "id": 10,
+    "tanggal": "2024-10-10",
+    "nama_barang": "Sepatu Kulit Formal",
+    "jumlah_barang": 1,
+    "harga_satuan": 350000
+  },
+  {
+    "id": 11,
+    "tanggal": "2024-10-11",
+    "nama_barang": "Sepatu High Heels",
+    "jumlah_barang": 2,
+    "harga_satuan": 250000
+  },
+  {
+    "id": 12,
+    "tanggal": "2024-10-12",
+    "nama_barang": "Sandal Jepit",
+    "jumlah_barang": 5,
+    "harga_satuan": 20000
+  },
+  {
+    "id": 13,
+    "tanggal": "2024-10-13",
+    "nama_barang": "Jas Formal",
+    "jumlah_barang": 1,
+    "harga_satuan": 400000
+  },
+  {
+    "id": 14,
+    "tanggal": "2024-10-14",
+    "nama_barang": "Dress Kasual",
+    "jumlah_barang": 1,
+    "harga_satuan": 250000
+  },
+  {
+    "id": 15,
+    "tanggal": "2024-10-15",
+    "nama_barang": "Kacamata Hitam",
+    "jumlah_barang": 2,
+    "harga_satuan": 80000
+  },
+  {
+    "id": 16,
+    "tanggal": "2024-10-16",
+    "nama_barang": "Gelang Kulit",
+    "jumlah_barang": 3,
+    "harga_satuan": 50000
+  },
+  {
+    "id": 17,
+    "tanggal": "2024-10-17",
+    "nama_barang": "Anting Hoop",
+    "jumlah_barang": 4,
+    "harga_satuan": 30000
+  },
+  {
+    "id": 18,
+    "tanggal": "2024-10-18",
+    "nama_barang": "Kaos Polo",
+    "jumlah_barang": 2,
+    "harga_satuan": 90000
+  },
+  {
+    "id": 19,
+    "tanggal": "2024-10-19",
+    "nama_barang": "Syal Hangat",
+    "jumlah_barang": 1,
+    "harga_satuan": 60000
+  },
+  {
+    "id": 20,
+    "tanggal": "2024-10-20",
+    "nama_barang": "Tas Ransel",
+    "jumlah_barang": 1,
+    "harga_satuan": 150000
+  },
+  {
+    "id": 21,
+    "tanggal": "2024-10-21",
+    "nama_barang": "Baju Tidur",
+    "jumlah_barang": 2,
+    "harga_satuan": 120000
+  },
+  {
+    "id": 22,
+    "tanggal": "2024-10-22",
+    "nama_barang": "Blazer Kasual",
+    "jumlah_barang": 1,
+    "harga_satuan": 220000
+  },
+  {
+    "id": 23,
+    "tanggal": "2024-10-23",
+    "nama_barang": "Tank Top",
+    "jumlah_barang": 3,
+    "harga_satuan": 50000
+  },
+  {
+    "id": 24,
+    "tanggal": "2024-10-24",
+    "nama_barang": "Kaus Kaki Wool",
+    "jumlah_barang": 4,
+    "harga_satuan": 30000
+  },
+  {
+    "id": 25,
+    "tanggal": "2024-10-25",
+    "nama_barang": "Rompi Denim",
+    "jumlah_barang": 2,
+    "harga_satuan": 150000
+  }
+]

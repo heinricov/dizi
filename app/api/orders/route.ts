@@ -1,3 +1,7 @@
+import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
+
 interface User {
   id: number;
   nama: string;
@@ -8,18 +12,14 @@ interface User {
   gender: string;
 }
 
-import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-
 // Function to read users from the JSON file
 function getUsers(): User[] {
-  const filePath = path.join(process.cwd(), "app/api/products/products.json");
+  const filePath = path.join(process.cwd(), "app/api/products/orders.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
   return JSON.parse(fileContents) as User[];
 }
 
-// GET handler to retrieve all users
+// GET handler to retrieve all users or show alert message
 export async function GET(request: Request) {
   const acceptHeader = request.headers.get("accept") || "";
 
@@ -37,6 +37,8 @@ export async function GET(request: Request) {
       headers: { "Content-Type": "text/html" }
     });
   }
+
+  // Handle JSON response for non-browser clients
   try {
     const users = getUsers();
     const safeUsers = users.map(
