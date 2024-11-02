@@ -1,0 +1,227 @@
+[
+  {
+    "id": 1,
+    "nama": "Topi Baseball",
+    "kategori": "Aksesoris",
+    "type": "Topi",
+    "ukuran": "All Size",
+    "warna": "Hitam",
+    "gender": "Unisex"
+  },
+  {
+    "id": 2,
+    "nama": "Kemeja Formal",
+    "kategori": "Pakaian Atas",
+    "type": "Kemeja",
+    "ukuran": "L",
+    "warna": "Putih",
+    "gender": "Pria"
+  },
+  {
+    "id": 3,
+    "nama": "Kaos Polos",
+    "kategori": "Pakaian Atas",
+    "type": "Kaos",
+    "ukuran": "M",
+    "warna": "Abu-abu",
+    "gender": "Unisex"
+  },
+  {
+    "id": 4,
+    "nama": "Sweater Hoodie",
+    "kategori": "Pakaian Atas",
+    "type": "Sweater",
+    "ukuran": "XL",
+    "warna": "Merah",
+    "gender": "Wanita"
+  },
+  {
+    "id": 5,
+    "nama": "Jaket Bomber",
+    "kategori": "Pakaian Luar",
+    "type": "Jaket",
+    "ukuran": "L",
+    "warna": "Hijau Army",
+    "gender": "Pria"
+  },
+  {
+    "id": 6,
+    "nama": "Celana Jeans",
+    "kategori": "Pakaian Bawah",
+    "type": "Celana",
+    "ukuran": "32",
+    "warna": "Biru Tua",
+    "gender": "Unisex"
+  },
+  {
+    "id": 7,
+    "nama": "Celana Chino",
+    "kategori": "Pakaian Bawah",
+    "type": "Celana",
+    "ukuran": "30",
+    "warna": "Beige",
+    "gender": "Pria"
+  },
+  {
+    "id": 8,
+    "nama": "Rok Mini",
+    "kategori": "Pakaian Bawah",
+    "type": "Rok",
+    "ukuran": "S",
+    "warna": "Hitam",
+    "gender": "Wanita"
+  },
+  {
+    "id": 9,
+    "nama": "Sepatu Sneakers",
+    "kategori": "Sepatu",
+    "type": "Sneakers",
+    "ukuran": "42",
+    "warna": "Putih",
+    "gender": "Unisex"
+  },
+  {
+    "id": 10,
+    "nama": "Sepatu Kulit Formal",
+    "kategori": "Sepatu",
+    "type": "Formal",
+    "ukuran": "44",
+    "warna": "Cokelat",
+    "gender": "Pria"
+  },
+  {
+    "id": 11,
+    "nama": "Sepatu High Heels",
+    "kategori": "Sepatu",
+    "type": "Heels",
+    "ukuran": "38",
+    "warna": "Merah",
+    "gender": "Wanita"
+  },
+  {
+    "id": 12,
+    "nama": "Sandal Jepit",
+    "kategori": "Sandal",
+    "type": "Jepit",
+    "ukuran": "41",
+    "warna": "Hitam",
+    "gender": "Unisex"
+  },
+  {
+    "id": 13,
+    "nama": "Jas Formal",
+    "kategori": "Pakaian Luar",
+    "type": "Jas",
+    "ukuran": "L",
+    "warna": "Hitam",
+    "gender": "Pria"
+  },
+  {
+    "id": 14,
+    "nama": "Dress Kasual",
+    "kategori": "Pakaian",
+    "type": "Dress",
+    "ukuran": "M",
+    "warna": "Biru",
+    "gender": "Wanita"
+  },
+  {
+    "id": 15,
+    "nama": "Kacamata Hitam",
+    "kategori": "Aksesoris",
+    "type": "Kacamata",
+    "ukuran": "All Size",
+    "warna": "Hitam",
+    "gender": "Unisex"
+  },
+  {
+    "id": 16,
+    "nama": "Gelang Kulit",
+    "kategori": "Aksesoris",
+    "type": "Gelang",
+    "ukuran": "All Size",
+    "warna": "Cokelat",
+    "gender": "Pria"
+  },
+  {
+    "id": 17,
+    "nama": "Anting Hoop",
+    "kategori": "Aksesoris",
+    "type": "Anting",
+    "ukuran": "All Size",
+    "warna": "Perak",
+    "gender": "Wanita"
+  },
+  {
+    "id": 18,
+    "nama": "Kaos Polo",
+    "kategori": "Pakaian Atas",
+    "type": "Kaos",
+    "ukuran": "XL",
+    "warna": "Navy",
+    "gender": "Pria"
+  },
+  {
+    "id": 19,
+    "nama": "Syal Hangat",
+    "kategori": "Aksesoris",
+    "type": "Syal",
+    "ukuran": "All Size",
+    "warna": "Abu-abu",
+    "gender": "Unisex"
+  },
+  {
+    "id": 20,
+    "nama": "Tas Ransel",
+    "kategori": "Tas",
+    "type": "Ransel",
+    "ukuran": "Medium",
+    "warna": "Hitam",
+    "gender": "Unisex"
+  },
+  {
+    "id": 21,
+    "nama": "Baju Tidur",
+    "kategori": "Pakaian",
+    "type": "Baju Tidur",
+    "ukuran": "L",
+    "warna": "Pink",
+    "gender": "Wanita"
+  },
+  {
+    "id": 22,
+    "nama": "Blazer Kasual",
+    "kategori": "Pakaian Luar",
+    "type": "Blazer",
+    "ukuran": "M",
+    "warna": "Abu-abu",
+    "gender": "Pria"
+  },
+  {
+    "id": 23,
+    "nama": "Tank Top",
+    "kategori": "Pakaian Atas",
+    "type": "Tank Top",
+    "ukuran": "S",
+    "warna": "Putih",
+    "gender": "Wanita"
+  },
+  {
+    "id": 24,
+    "nama": "Kaus Kaki Wool",
+    "kategori": "Aksesoris",
+    "type": "Kaus Kaki",
+    "ukuran": "All Size",
+    "warna": "Hitam",
+    "gender": "Unisex"
+  },
+  {
+    "id": 25,
+    "nama": "Rompi Denim",
+    "kategori": "Pakaian Luar",
+    "type": "Rompi",
+    "ukuran": "L",
+    "warna": "Biru",
+    "gender": "Pria"
+  }
+]

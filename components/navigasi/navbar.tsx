@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Search, Moon, Sun, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -70,13 +71,19 @@ export function Navbar() {
         <div className="container px-4 mx-auto">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-8">
-              <Link href="/" className="flex items-center space-x-2">
-                <span className="font-bold text-xl">Dizi</span>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/dizi.png"
+                  alt="Dizi Logo"
+                  className="h-[6rem] w-[6rem] object-contain"
+                  width={32}
+                  height={32}
+                />
                 <Link
-                  href="#"
-                  className="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2"
+                  href="/docs"
+                  className="bg-blue-100 text-blue-800 text-xs lg:text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2"
                 >
-                  OpenApi
+                  V.0.0.1
                 </Link>
               </Link>
               <div className="hidden md:flex gap-6">
