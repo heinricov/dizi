@@ -1,12 +1,14 @@
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+// Pastikan utilitas 'cn' sudah diimpor dengan benar
+import { cn } from "@/lib/utils";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+// Definisikan tipe untuk `InputProps`
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type = "text", ...props }, ref) => {
+    // Beri default `type` sebagai "text" jika tidak ada
     return (
       <input
         type={type}
@@ -17,9 +19,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         {...props}
       />
-    )
+    );
   }
-)
-Input.displayName = "Input"
+);
 
-export { Input }
+Input.displayName = "Input";
+
+export { Input };
