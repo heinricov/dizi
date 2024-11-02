@@ -1,101 +1,190 @@
-import Image from "next/image";
+import Head from "next/head";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Database, Users, ShoppingCart, Zap, Code, Lock } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Head>
+        <title>Free APIs for Your Next Project | OpenAPI Hub</title>
+        <meta
+          name="description"
+          content="Access reliable, high-performance APIs without cost. Perfect for prototypes, learning, and production applications."
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <meta
+          property="og:title"
+          content="Free APIs for Your Next Project | OpenAPI Hub"
+        />
+        <meta
+          property="og:description"
+          content="Explore a wide range of free, secure, and high-performance APIs designed for developers."
+        />
+        <meta property="og:image" content="/path/to/og-image.jpg" />{" "}
+        {/* Ganti dengan path gambar relevan */}
+        <meta property="og:url" content="https://yourwebsite.com" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-primary/5 to-transparent">
+        <div className="container px-4 mx-auto">
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold">
+              Free APIs for Your Next{" "}
+              <span className="text-primary">Project</span>
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Access reliable, high-performance APIs without cost. Perfect for
+              prototypes, learning, and production applications.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg">
+                <Link href="/docs/getting-started">Get Started</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/docs">View Documentation</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-accent">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Why Choose Our APIs?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <Zap
+                  className="w-10 h-10 text-primary mb-2"
+                  aria-label="Lightning Fast"
+                />
+                <CardTitle>Lightning Fast</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Optimized for speed with global CDN distribution and minimal
+                  latency.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Lock
+                  className="w-10 h-10 text-primary mb-2"
+                  aria-label="Secure by Default"
+                />
+                <CardTitle>Secure by Default</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  HTTPS encryption and optional API key authentication for your
+                  security.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Code
+                  className="w-10 h-10 text-primary mb-2"
+                  aria-label="Developer Friendly"
+                />
+                <CardTitle>Developer Friendly</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Comprehensive documentation and intuitive API design.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Showcase Section */}
+      <section className="py-20">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Available APIs
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <Users
+                  className="w-10 h-10 text-primary mb-2"
+                  aria-label="Users API"
+                />
+                <CardTitle>Users API</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Complete user management API with authentication and profiles.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/docs/users-api">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <ShoppingCart
+                  className="w-10 h-10 text-primary mb-2"
+                  aria-label="Products API"
+                />
+                <CardTitle>Products API</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  E-commerce ready product management with categories and
+                  search.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/docs/products-api">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Database
+                  className="w-10 h-10 text-primary mb-2"
+                  aria-label="Orders API"
+                />
+                <CardTitle>Orders API</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Complete order management system with status tracking.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/docs/orders-api">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 bg-accent">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-3xl font-bold">About OpenAPI Hub</h2>
+            <p className="text-lg text-muted-foreground">
+              We believe in empowering developers with reliable, free tools. Our
+              mission is to provide high-quality APIs that help you build
+              amazing applications without worrying about infrastructure or
+              costs.
+            </p>
+            <Button asChild>
+              <Link href="/docs">Explore Our APIs</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
