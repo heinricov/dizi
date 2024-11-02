@@ -23,6 +23,13 @@ const sidebarItems = [
       { title: "Products API", href: "/docs/products-api" },
       { title: "Orders API", href: "/docs/orders-api" }
     ]
+  },
+  {
+    title: "Legal",
+    items: [
+      { title: "Privacy Policy", href: "/docs/privacy-policy" },
+      { title: "Terms of Service", href: "/docs/terms-of-service" }
+    ]
   }
 ];
 

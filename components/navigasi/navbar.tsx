@@ -16,8 +16,10 @@ import { Button } from "@/components/ui/button";
 import { Search, Moon, Sun, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { FaDiscord, FaGithub } from "react-icons/fa6";
 
 export function Navbar() {
+  const doc = "Doc's";
   const [open, setOpen] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { setTheme, theme } = useTheme();
@@ -88,7 +90,9 @@ export function Navbar() {
               </Link>
               <div className="hidden md:flex gap-6">
                 <NavLink href="/">Home</NavLink>
-                <NavLink href="/docs">Documentation</NavLink>
+                <NavLink href="/docs">{doc}</NavLink>
+                <NavLink href="/contributor">Contributor</NavLink>
+                <NavLink href="/gift">Gift</NavLink>
               </div>
             </div>
 
@@ -99,8 +103,16 @@ export function Navbar() {
                 className="w-9 px-0 transition-all duration-200 ease-in-out hover:scale-110"
                 onClick={() => setOpen(true)}
               >
-                <Search className="h-4 w-4" />
+                <Search className="h-4 w-4 hidden md:block" />
               </Button>
+              <Link href="#">
+                <FaGithub />
+              </Link>
+              <Link href="#">
+                <FaDiscord />
+              </Link>
+              {/* <FaXTwitter />
+              <FaInstagram /> */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -152,11 +164,22 @@ export function Navbar() {
         </div>
         <div className="py-4">
           <div className="flex flex-col space-y-3 px-6">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="w-9 px-0 transition-all duration-200 ease-in-out hover:scale-110"
+              onClick={() => setOpen(true)}
+            >
+              <Search className="h-4 w-4" />
+            </Button>
             <NavLink href="/" onClick={() => setShowMobileMenu(false)}>
               Home
             </NavLink>
             <NavLink href="/docs" onClick={() => setShowMobileMenu(false)}>
-              Documentation
+              {doc}
+            </NavLink>
+            <NavLink href="/gift" onClick={() => setShowMobileMenu(false)}>
+              Gift
             </NavLink>
           </div>
         </div>
