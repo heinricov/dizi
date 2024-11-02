@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Search, Moon, Sun, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { FaDiscord, FaGithub } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 export function Navbar() {
   const doc = "Doc's";
@@ -111,8 +111,8 @@ export function Navbar() {
               <Link href="#">
                 <FaDiscord />
               </Link>
-              {/* <FaXTwitter />
-              <FaInstagram /> */}
+              <FaXTwitter />
+              {/* <FaInstagram /> */}
               <Button
                 variant="ghost"
                 size="icon"
