@@ -22,7 +22,16 @@ export function Navbar() {
   const { setTheme, theme } = useTheme();
   const pathname = usePathname();
 
-  const NavLink = ({ href, children, onClick }) => {
+  // Tambahkan tipe untuk NavLink
+  const NavLink = ({
+    href,
+    children,
+    onClick
+  }: {
+    href: string;
+    children: React.ReactNode;
+    onClick?: () => void;
+  }) => {
     const isActive = pathname === href;
     return (
       <Link
@@ -63,12 +72,12 @@ export function Navbar() {
             <div className="flex items-center gap-8">
               <Link href="/" className="flex items-center space-x-2">
                 <span className="font-bold text-xl">Dizi</span>
-                <a
+                <Link
                   href="#"
                   className="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2"
                 >
                   OpenApi
-                </a>
+                </Link>
               </Link>
               <div className="hidden md:flex gap-6">
                 <NavLink href="/">Home</NavLink>
