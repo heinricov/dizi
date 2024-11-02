@@ -1,16 +1,23 @@
+interface User {
+  id: number;
+  nama: string;
+  email: string;
+  password: string;
+}
+
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
 // Function to read users from the JSON file
-function getUsers() {
+function getUsers(): User[] {
   const filePath = path.join(process.cwd(), "app/api/users/users.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
   return JSON.parse(fileContents);
 }
 
 // Function to write users to the JSON file
-function writeUsers(users: any[]) {
+function writeUsers(users: User[]) {
   const filePath = path.join(process.cwd(), "app/api/users/users.json");
   fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 }
@@ -22,19 +29,13 @@ export async function GET(
 ) {
   try {
     const users = getUsers();
-    const user = users.find(
-      (u: { id: number }) => u.id === parseInt(params.id)
-    );
+    const user = users.find((u: User) => u.id === parseInt(params.id));
 
     if (!user) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    // Remove password from the response for security
-    const { password, ...safeUser } = user as {
-      password: string;
-      [key: string]: any;
-    };
+    const { password, ...safeUser } = user;
     return NextResponse.json(safeUser);
   } catch (error: unknown) {
     const errorMessage =
@@ -50,18 +51,19 @@ export async function PUT(
 ) {
   try {
     const users = getUsers();
-    const userIndex = users.findIndex((u: any) => u.id === parseInt(params.id));
+    const userIndex = users.findIndex(
+      (u: User) => u.id === parseInt(params.id)
+    );
 
     if (userIndex === -1) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    const updatedUser = await request.json();
+    const updatedUser: Partial<User> = await request.json();
     users[userIndex] = { ...users[userIndex], ...updatedUser };
 
     writeUsers(users);
 
-    // Remove password from the response for security
     const { password, ...safeUser } = users[userIndex];
     return NextResponse.json(safeUser);
   } catch (error: unknown) {
@@ -78,13 +80,15 @@ export async function DELETE(
 ) {
   try {
     let users = getUsers();
-    const userIndex = users.findIndex((u: any) => u.id === parseInt(params.id));
+    const userIndex = users.findIndex(
+      (u: User) => u.id === parseInt(params.id)
+    );
 
     if (userIndex === -1) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    users = users.filter((u: any) => u.id !== parseInt(params.id));
+    users = users.filter((u: User) => u.id !== parseInt(params.id));
     writeUsers(users);
 
     return NextResponse.json({ message: "User deleted successfully" });
