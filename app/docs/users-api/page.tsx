@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Users, GraduationCap, Code, Lock, Zap } from "lucide-react";
 import Link from "next/link";
 import { CopyButton } from "@/components/navigasi/copy-button";
-// import Image from "next/image";
 import { FaImage } from "react-icons/fa6";
 
 export const metadata = {
@@ -21,17 +20,17 @@ export const metadata = {
 
 export default function UsersAPIPage() {
   return (
-    <div className="max-w-4xl">
+    <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
       {/* Introduction Section */}
       <section className="mb-12">
-        <h1 className="text-4xl font-bold mb-6">Users API</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6">Users API</h1>
         <div className="prose dark:prose-invert max-w-none">
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8">
             Users API menyediakan akses ke berbagai data pengguna yang dapat
             Anda gunakan untuk aplikasi Anda. Dengan dukungan untuk manajemen
             pengguna dasar, gambar profil, dan data sekolah.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <Card>
               <CardHeader className="space-y-1">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
@@ -99,23 +98,20 @@ export default function UsersAPIPage() {
                   profil lainnya.
                 </p>
                 <Tabs defaultValue="get" className="w-full">
-                  <TabsList>
+                  <TabsList className="w-full justify-start">
                     <TabsTrigger value="get">GET</TabsTrigger>
                     <TabsTrigger value="response">Response</TabsTrigger>
                   </TabsList>
                   <TabsContent value="get">
                     <div className="relative">
-                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                         <code>GET https://api.dizi.dev/v1/users</code>
                       </pre>
-                      <CopyButton
-                        text="https://api.dizi.dev/v1/users"
-                        // endpoint="basic-users"
-                      />
+                      <CopyButton text="https://api.dizi.dev/v1/users" />
                     </div>
                   </TabsContent>
                   <TabsContent value="response">
-                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                       <code>
                         {JSON.stringify(
                           {
@@ -136,7 +132,7 @@ export default function UsersAPIPage() {
           </Card>
 
           {/* Users with Images API */}
-          <Card className="col-span-2 overflow-hidden">
+          <Card>
             <CardHeader>
               <div className="flex items-center gap-4">
                 <FaImage className="w-8 h-8 text-primary" />
@@ -155,25 +151,22 @@ export default function UsersAPIPage() {
                   avatar.
                 </p>
                 <Tabs defaultValue="get" className="w-full">
-                  <TabsList>
+                  <TabsList className="w-full justify-start">
                     <TabsTrigger value="get">GET</TabsTrigger>
                     <TabsTrigger value="response">Response</TabsTrigger>
                   </TabsList>
                   <TabsContent value="get">
                     <div className="relative">
-                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                         <code>
                           GET https://api.dizi.dev/v1/users/with-images
                         </code>
                       </pre>
-                      <CopyButton
-                        text="https://api.dizi.dev/v1/users/with-images"
-                        // endpoint="users-images"
-                      />
+                      <CopyButton text="https://api.dizi.dev/v1/users/with-images" />
                     </div>
                   </TabsContent>
                   <TabsContent value="response">
-                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                       <code>
                         {JSON.stringify(
                           {
@@ -215,23 +208,20 @@ export default function UsersAPIPage() {
                   sekolah, tingkat, dan jurusan.
                 </p>
                 <Tabs defaultValue="get" className="w-full">
-                  <TabsList>
+                  <TabsList className="w-full justify-start">
                     <TabsTrigger value="get">GET</TabsTrigger>
                     <TabsTrigger value="response">Response</TabsTrigger>
                   </TabsList>
                   <TabsContent value="get">
                     <div className="relative">
-                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                         <code>GET https://api.dizi.dev/v1/users/school</code>
                       </pre>
-                      <CopyButton
-                        text="https://api.dizi.dev/v1/users/school"
-                        // endpoint="users-school"
-                      />
+                      <CopyButton text="https://api.dizi.dev/v1/users/school" />
                     </div>
                   </TabsContent>
                   <TabsContent value="response">
-                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                       <code>
                         {JSON.stringify(
                           {
@@ -284,7 +274,7 @@ export default function UsersAPIPage() {
                   request.
                 </p>
                 <div className="relative">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                     <code>{`fetch('https://api.dizi.dev/v1/users', {
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY'
@@ -301,7 +291,6 @@ export default function UsersAPIPage() {
 })
 .then(response => response.json())
 .then(data => console.log(data));`}
-                    // endpoint="fetch-example"
                   />
                 </div>
               </div>
@@ -314,12 +303,12 @@ export default function UsersAPIPage() {
                   Response akan selalu dalam format JSON dengan struktur yang
                   konsisten.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   <div>
                     <h4 className="text-sm font-medium mb-2">
                       Sukses Response (200)
                     </h4>
-                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                       <code>
                         {JSON.stringify(
                           {
@@ -339,7 +328,7 @@ export default function UsersAPIPage() {
                     <h4 className="text-sm font-medium mb-2">
                       Error Response (4xx/5xx)
                     </h4>
-                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
                       <code>
                         {JSON.stringify(
                           {
