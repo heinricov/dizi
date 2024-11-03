@@ -1,236 +1,366 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Users, GraduationCap, Code, Lock, Zap } from "lucide-react";
 import Link from "next/link";
+import { CopyButton } from "@/components/navigasi/copy-button";
+// import Image from "next/image";
+import { FaImage } from "react-icons/fa6";
+
+export const metadata = {
+  title: "Users API - Dokumentasi Lengkap dan Endpoint",
+  description:
+    "Dokumentasi lengkap Users API Dizi. Akses data pengguna, gambar profil, dan informasi sekolah dengan mudah melalui REST API."
+};
 
 export default function UsersAPIPage() {
   return (
-    <div className="max-w-3xl">
-      <h1 className="text-4xl font-bold mb-6">Users API</h1>
-
-      <div className="prose dark:prose-invert max-w-none">
-        <p className="text-xl text-muted-foreground mb-8">
-          The Users API provides endpoints for managing user accounts,
-          authentication, and user profiles.
-        </p>
-
-        <h2 className="text-2xl font-semibold mb-4">Feature</h2>
-
-        <div className="space-y-8">
-          {/* List Users Endpoint */}
-          <div className="border rounded-lg p-6 mb-5">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-medium">Users</h3>
-              </div>
-              <Link
-                href="https://dizi.vercel.app/api/users"
-                className="bg-blue-100 text-blue-800 text-xs lg:text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-500 dark:text-yellow-300 mb-2"
-              >
-                Basic
-              </Link>
-            </div>
-            <p className="">
-              API Link:{" "}
-              <Link
-                href="https://dizi.vercel.app/api/users"
-                className="text-sm ml-3 text-blue-500 hover:underline"
-              >
-                https://dizi.vercel.app/api/users
-              </Link>
-            </p>
-            <p>
-              Data: <span className="text-sm ml-3"> 10</span>
-            </p>
-            <p>
-              Variabel: <span className="text-sm ml-3">id, Nama, Email</span>
-            </p>
+    <div className="max-w-4xl">
+      {/* Introduction Section */}
+      <section className="mb-12">
+        <h1 className="text-4xl font-bold mb-6">Users API</h1>
+        <div className="prose dark:prose-invert max-w-none">
+          <p className="text-xl text-muted-foreground mb-8">
+            Users API menyediakan akses ke berbagai data pengguna yang dapat
+            Anda gunakan untuk aplikasi Anda. Dengan dukungan untuk manajemen
+            pengguna dasar, gambar profil, dan data sekolah.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <Card>
+              <CardHeader className="space-y-1">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
+                  <Lock className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Aman</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Dilengkapi dengan autentikasi API key dan rate limiting
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="space-y-1">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Cepat</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Response time cepat dengan CDN global
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="space-y-1">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
+                  <Code className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Mudah</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Dokumentasi lengkap dan format JSON yang konsisten
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
+      </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Endpoints</h2>
-
-          <div className="space-y-8">
-            {/* List Users Endpoint */}
-            <div className="border rounded-lg p-6">
-              <div className="flex items-center justify-between mb-4">
+      {/* Available APIs Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">API yang Tersedia</h2>
+        <div className="grid gap-6">
+          {/* Basic Users API */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <Users className="w-8 h-8 text-primary" />
                 <div>
-                  <h3 className="text-xl font-medium">List Users</h3>
+                  <CardTitle>Basic Users API</CardTitle>
+                  <CardDescription>
+                    Endpoint dasar untuk manajemen pengguna
+                  </CardDescription>
                 </div>
-                <code className="text-sm bg-accent px-2 py-1 rounded">
-                  GET /users
-                </code>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Akses data pengguna dasar seperti nama, email, dan informasi
+                  profil lainnya.
+                </p>
+                <Tabs defaultValue="get" className="w-full">
+                  <TabsList>
+                    <TabsTrigger value="get">GET</TabsTrigger>
+                    <TabsTrigger value="response">Response</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="get">
+                    <div className="relative">
+                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                        <code>GET https://api.dizi.dev/v1/users</code>
+                      </pre>
+                      <CopyButton
+                        text="https://api.dizi.dev/v1/users"
+                        endpoint="basic-users"
+                      />
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="response">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <code>
+                        {JSON.stringify(
+                          {
+                            id: "user_123",
+                            name: "John Doe",
+                            email: "john@example.com",
+                            created_at: "2024-01-01T00:00:00Z"
+                          },
+                          null,
+                          2
+                        )}
+                      </code>
+                    </pre>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Users with Images API */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <FaImage className="w-8 h-8 text-primary" />
+                <div>
+                  <CardTitle>Users with Images API</CardTitle>
+                  <CardDescription>
+                    Endpoint untuk data pengguna dengan gambar profil
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Dapatkan data pengguna lengkap dengan URL gambar profil dan
+                  avatar.
+                </p>
+                <Tabs defaultValue="get" className="w-full">
+                  <TabsList>
+                    <TabsTrigger value="get">GET</TabsTrigger>
+                    <TabsTrigger value="response">Response</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="get">
+                    <div className="relative">
+                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                        <code>
+                          GET https://api.dizi.dev/v1/users/with-images
+                        </code>
+                      </pre>
+                      <CopyButton
+                        text="https://api.dizi.dev/v1/users/with-images"
+                        endpoint="users-images"
+                      />
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="response">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <code>
+                        {JSON.stringify(
+                          {
+                            id: "user_123",
+                            name: "John Doe",
+                            email: "john@example.com",
+                            profile_image:
+                              "https://api.dizi.dev/images/profile/123.jpg",
+                            avatar: "https://api.dizi.dev/images/avatar/123.jpg"
+                          },
+                          null,
+                          2
+                        )}
+                      </code>
+                    </pre>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* School Users API */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <GraduationCap className="w-8 h-8 text-primary" />
+                <div>
+                  <CardTitle>School Users API</CardTitle>
+                  <CardDescription>
+                    Endpoint untuk data pengguna dengan informasi sekolah
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Akses data pengguna dengan informasi sekolah seperti nama
+                  sekolah, tingkat, dan jurusan.
+                </p>
+                <Tabs defaultValue="get" className="w-full">
+                  <TabsList>
+                    <TabsTrigger value="get">GET</TabsTrigger>
+                    <TabsTrigger value="response">Response</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="get">
+                    <div className="relative">
+                      <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                        <code>GET https://api.dizi.dev/v1/users/school</code>
+                      </pre>
+                      <CopyButton
+                        text="https://api.dizi.dev/v1/users/school"
+                        endpoint="users-school"
+                      />
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="response">
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <code>
+                        {JSON.stringify(
+                          {
+                            id: "user_123",
+                            name: "John Doe",
+                            email: "john@example.com",
+                            school: {
+                              name: "SMA Negeri 1",
+                              level: "SMA",
+                              grade: "12",
+                              major: "IPA"
+                            }
+                          },
+                          null,
+                          2
+                        )}
+                      </code>
+                    </pre>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* How to Use Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">Cara Menggunakan API</h2>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">
+                  1. Dapatkan API Key
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Daftar untuk mendapatkan API key Anda yang akan digunakan
+                  untuk autentikasi.
+                </p>
+                <Button asChild>
+                  <Link href="/docs/authentication">Dapatkan API Key</Link>
+                </Button>
               </div>
 
-              <Tabs defaultValue="request" className="w-full">
-                <TabsList>
-                  <TabsTrigger value="request">Request</TabsTrigger>
-                  <TabsTrigger value="response">Response</TabsTrigger>
-                </TabsList>
-                <TabsContent value="request">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto mt-4">
-                    <code>{`curl https://api.openhub.dev/v1/users \\
-  -H "Authorization: Bearer YOUR_API_KEY"`}</code>
-                  </pre>
-                </TabsContent>
-                <TabsContent value="response">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto mt-4">
-                    <code>{`{
-  "users": [
-    {
-      "id": "user_123",
-      "name": "John Doe",
-      "email": "john@example.com",
-      "created_at": "2024-01-01T00:00:00Z"
-    },
-    {
-      "id": "user_124",
-      "name": "Jane Smith",
-      "email": "jane@example.com",
-      "created_at": "2024-01-02T00:00:00Z"
-    }
-  ],
-  "total": 2,
-  "page": 1,
-  "per_page": 10
-}`}</code>
-                  </pre>
-                </TabsContent>
-              </Tabs>
-            </div>
-
-            {/* Get User Endpoint */}
-            <div className="border rounded-lg p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-medium">Get User</h3>
-                <code className="text-sm bg-accent px-2 py-1 rounded">
-                  GET /users/:id
-                </code>
-              </div>
-
-              <Tabs defaultValue="request" className="w-full">
-                <TabsList>
-                  <TabsTrigger value="request">Request</TabsTrigger>
-                  <TabsTrigger value="response">Response</TabsTrigger>
-                </TabsList>
-                <TabsContent value="request">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto mt-4">
-                    <code>{`curl https://api.openhub.dev/v1/users/user_123 \\
-  -H "Authorization: Bearer YOUR_API_KEY"`}</code>
-                  </pre>
-                </TabsContent>
-                <TabsContent value="response">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto mt-4">
-                    <code>{`{
-  "id": "user_123",
-  "name": "John Doe",
-  "email": "john@example.com",
-  "created_at": "2024-01-01T00:00:00Z",
-  "profile": {
-    "avatar_url": "https://example.com/avatar.jpg",
-    "bio": "Software developer",
-    "location": "San Francisco, CA"
+              <div>
+                <h3 className="text-lg font-semibold mb-2">2. Buat Request</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Gunakan API key Anda dalam header Authorization untuk setiap
+                  request.
+                </p>
+                <div className="relative">
+                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                    <code>{`fetch('https://api.dizi.dev/v1/users', {
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
   }
-}`}</code>
+})
+.then(response => response.json())
+.then(data => console.log(data));`}</code>
                   </pre>
-                </TabsContent>
-              </Tabs>
-            </div>
-
-            {/* Create User Endpoint */}
-            <div className="border rounded-lg p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-medium">Create User</h3>
-                <code className="text-sm bg-accent px-2 py-1 rounded">
-                  POST /users
-                </code>
+                  <CopyButton
+                    text={`fetch('https://api.dizi.dev/v1/users', {
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
+  }
+})
+.then(response => response.json())
+.then(data => console.log(data));`}
+                    endpoint="fetch-example"
+                  />
+                </div>
               </div>
 
-              <Tabs defaultValue="request" className="w-full">
-                <TabsList>
-                  <TabsTrigger value="request">Request</TabsTrigger>
-                  <TabsTrigger value="response">Response</TabsTrigger>
-                </TabsList>
-                <TabsContent value="request">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto mt-4">
-                    <code>{`curl -X POST https://api.openhub.dev/v1/users \\
-  -H "Authorization: Bearer YOUR_API_KEY" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "name": "John Doe",
-    "email": "john@example.com",
-    "password": "secure_password"
-  }'`}</code>
-                  </pre>
-                </TabsContent>
-                <TabsContent value="response">
-                  <pre className="bg-accent p-4 rounded-lg overflow-x-auto mt-4">
-                    <code>{`{
-  "id": "user_123",
-  "name": "John Doe",
-  "email": "john@example.com",
-  "created_at": "2024-01-01T00:00:00Z"
-}`}</code>
-                  </pre>
-                </TabsContent>
-              </Tabs>
+              <div>
+                <h3 className="text-lg font-semibold mb-2">
+                  3. Handle Response
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Response akan selalu dalam format JSON dengan struktur yang
+                  konsisten.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">
+                      Sukses Response (200)
+                    </h4>
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <code>
+                        {JSON.stringify(
+                          {
+                            success: true,
+                            data: {
+                              id: "user_123",
+                              name: "John Doe"
+                            }
+                          },
+                          null,
+                          2
+                        )}
+                      </code>
+                    </pre>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">
+                      Error Response (4xx/5xx)
+                    </h4>
+                    <pre className="bg-accent p-4 rounded-lg overflow-x-auto">
+                      <code>
+                        {JSON.stringify(
+                          {
+                            success: false,
+                            error: {
+                              code: "unauthorized",
+                              message: "Invalid API key"
+                            }
+                          },
+                          null,
+                          2
+                        )}
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Query Parameters</h2>
-          <div className="border rounded-lg divide-y">
-            <div className="p-4">
-              <h3 className="font-medium mb-2">page</h3>
-              <p className="text-muted-foreground">
-                Page number for pagination (default: 1)
-              </p>
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium mb-2">per_page</h3>
-              <p className="text-muted-foreground">
-                Number of items per page (default: 10, max: 100)
-              </p>
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium mb-2">sort</h3>
-              <p className="text-muted-foreground">
-                Sort field (created_at, name, email)
-              </p>
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium mb-2">order</h3>
-              <p className="text-muted-foreground">Sort order (asc, desc)</p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Error Responses</h2>
-          <div className="border rounded-lg divide-y">
-            <div className="p-4">
-              <h3 className="font-medium mb-2">400 Bad Request</h3>
-              <p className="text-muted-foreground">
-                Invalid request parameters
-              </p>
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium mb-2">401 Unauthorized</h3>
-              <p className="text-muted-foreground">
-                Invalid or missing API key
-              </p>
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium mb-2">404 Not Found</h3>
-              <p className="text-muted-foreground">User not found</p>
-            </div>
-            <div className="p-4">
-              <h3 className="font-medium mb-2">429 Too Many Requests</h3>
-              <p className="text-muted-foreground">Rate limit exceeded</p>
-            </div>
-          </div>
-        </section>
-      </div>
+          </CardContent>
+        </Card>
+      </section>
     </div>
   );
 }
