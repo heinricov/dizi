@@ -1,49 +1,35 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Database, Users, ShoppingCart, Zap, Code, Lock } from "lucide-react";
 
+export const metadata = {
+  title: "Dizi - Penyedia API Gratis untuk Developer | Free API Provider",
+  description:
+    "Dizi menyediakan API gratis berkualitas tinggi untuk pengembang. Akses endpoint yang handal untuk proyek Anda dengan dokumentasi lengkap dan dukungan teknis. | Dizi provides high-quality free APIs for developers. Access reliable endpoints for your projects with comprehensive documentation and technical support."
+};
+
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Free APIs for Your Next Project | OpenAPI Hub</title>
-        <meta
-          name="description"
-          content="Access reliable, high-performance APIs without cost. Perfect for prototypes, learning, and production applications."
-        />
-        <meta
-          property="og:title"
-          content="Free APIs for Your Next Project | OpenAPI Hub"
-        />
-        <meta
-          property="og:description"
-          content="Explore a wide range of free, secure, and high-performance APIs designed for developers."
-        />
-        <meta property="og:image" content="/path/to/og-image.jpg" />{" "}
-        {/* Ganti dengan path gambar relevan */}
-        <meta property="og:url" content="https://yourwebsite.com" />
-      </Head>
-
       {/* Hero Section */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-primary/5 to-transparent">
         <div className="container px-4 mx-auto">
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold">
-              Free APIs for Your Next{" "}
-              <span className="text-primary">Project</span>
+              API Gratis untuk
+              <span className="text-primary"> Proyek Anda</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Access reliable, high-performance APIs without cost. Perfect for
-              prototypes, learning, and production applications.
+              Akses API handal dan berkinerja tinggi tanpa biaya. Sempurna untuk
+              prototipe, pembelajaran, dan aplikasi produksi.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button asChild size="lg">
-                <Link href="/docs/getting-started">Get Started</Link>
+                <Link href="/docs/getting-started">Mulai Sekarang</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="/docs">View Documentation</Link>
+                <Link href="/docs">Lihat Dokumentasi</Link>
               </Button>
             </div>
           </div>
@@ -54,50 +40,41 @@ export default function Home() {
       <section className="py-20 bg-accent">
         <div className="container px-4 mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Why Choose Our APIs?
+            Mengapa Memilih API Kami?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <Zap
-                  className="w-10 h-10 text-primary mb-2"
-                  aria-label="Lightning Fast"
-                />
-                <CardTitle>Lightning Fast</CardTitle>
+                <Zap className="w-10 h-10 text-primary mb-2" />
+                <CardTitle>Sangat Cepat</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Optimized for speed with global CDN distribution and minimal
-                  latency.
+                  Dioptimalkan untuk kecepatan dengan distribusi CDN global dan
+                  latensi minimal.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <Lock
-                  className="w-10 h-10 text-primary mb-2"
-                  aria-label="Secure by Default"
-                />
-                <CardTitle>Secure by Default</CardTitle>
+                <Lock className="w-10 h-10 text-primary mb-2" />
+                <CardTitle>Aman Secara Default</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  HTTPS encryption and optional API key authentication for your
-                  security.
+                  Enkripsi HTTPS dan autentikasi API key opsional untuk keamanan
+                  Anda.
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <Code
-                  className="w-10 h-10 text-primary mb-2"
-                  aria-label="Developer Friendly"
-                />
-                <CardTitle>Developer Friendly</CardTitle>
+                <Code className="w-10 h-10 text-primary mb-2" />
+                <CardTitle>Ramah Developer</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Comprehensive documentation and intuitive API design.
+                  Dokumentasi lengkap dan desain API yang intuitif.
                 </p>
               </CardContent>
             </Card>
@@ -105,62 +82,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Showcase Section */}
+      {/* API Showcase Section */}
       <section className="py-20">
         <div className="container px-4 mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Available APIs
+            API yang Tersedia
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <Users
-                  className="w-10 h-10 text-primary mb-2"
-                  aria-label="Users API"
-                />
+                <Users className="w-10 h-10 text-primary mb-2" />
                 <CardTitle>Users API</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Complete user management API with authentication and profiles.
+                  API manajemen pengguna lengkap dengan autentikasi dan profil.
                 </p>
                 <Button variant="outline" asChild>
-                  <Link href="/docs/users-api">Learn More</Link>
+                  <Link href="/docs/users-api">Pelajari Lebih Lanjut</Link>
                 </Button>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <ShoppingCart
-                  className="w-10 h-10 text-primary mb-2"
-                  aria-label="Products API"
-                />
+                <ShoppingCart className="w-10 h-10 text-primary mb-2" />
                 <CardTitle>Products API</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  E-commerce ready product management with categories and
-                  search.
+                  API manajemen produk siap e-commerce dengan kategori dan
+                  pencarian.
                 </p>
                 <Button variant="outline" asChild>
-                  <Link href="/docs/products-api">Learn More</Link>
+                  <Link href="/docs/products-api">Pelajari Lebih Lanjut</Link>
                 </Button>
               </CardContent>
             </Card>
             <Card>
               <CardHeader>
-                <Database
-                  className="w-10 h-10 text-primary mb-2"
-                  aria-label="Orders API"
-                />
+                <Database className="w-10 h-10 text-primary mb-2" />
                 <CardTitle>Orders API</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Complete order management system with status tracking.
+                  Sistem manajemen pesanan lengkap dengan pelacakan status.
                 </p>
                 <Button variant="outline" asChild>
-                  <Link href="/docs/orders-api">Learn More</Link>
+                  <Link href="/docs/orders-api">Pelajari Lebih Lanjut</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -172,15 +140,15 @@ export default function Home() {
       <section className="py-20 bg-accent">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">About OpenAPI Hub</h2>
+            <h2 className="text-3xl font-bold">Tentang Dizi</h2>
             <p className="text-lg text-muted-foreground">
-              We believe in empowering developers with reliable, free tools. Our
-              mission is to provide high-quality APIs that help you build
-              amazing applications without worrying about infrastructure or
-              costs.
+              Kami percaya dalam memberdayakan pengembang dengan alat yang
+              handal dan gratis. Misi kami adalah menyediakan API berkualitas
+              tinggi yang membantu Anda membangun aplikasi luar biasa tanpa
+              khawatir tentang infrastruktur atau biaya.
             </p>
             <Button asChild>
-              <Link href="/docs">Explore Our APIs</Link>
+              <Link href="/docs">Jelajahi API Kami</Link>
             </Button>
           </div>
         </div>
