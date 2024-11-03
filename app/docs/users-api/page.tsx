@@ -110,7 +110,7 @@ export default function UsersAPIPage() {
                       </pre>
                       <CopyButton
                         text="https://api.dizi.dev/v1/users"
-                        endpoint="basic-users"
+                        // endpoint="basic-users"
                       />
                     </div>
                   </TabsContent>
@@ -168,7 +168,7 @@ export default function UsersAPIPage() {
                       </pre>
                       <CopyButton
                         text="https://api.dizi.dev/v1/users/with-images"
-                        endpoint="users-images"
+                        // endpoint="users-images"
                       />
                     </div>
                   </TabsContent>
@@ -226,7 +226,7 @@ export default function UsersAPIPage() {
                       </pre>
                       <CopyButton
                         text="https://api.dizi.dev/v1/users/school"
-                        endpoint="users-school"
+                        // endpoint="users-school"
                       />
                     </div>
                   </TabsContent>
@@ -301,7 +301,7 @@ export default function UsersAPIPage() {
 })
 .then(response => response.json())
 .then(data => console.log(data));`}
-                    endpoint="fetch-example"
+                    // endpoint="fetch-example"
                   />
                 </div>
               </div>

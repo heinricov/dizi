@@ -6,10 +6,9 @@ import { useState } from "react";
 
 interface CopyButtonProps {
   text: string;
-  endpoint: string;
 }
 
-export function CopyButton({ text, endpoint }: CopyButtonProps) {
+export function CopyButton({ text }: CopyButtonProps) {
   const [copying, setCopying] = useState(false);
   const { toast } = useToast();
 
@@ -24,7 +23,7 @@ export function CopyButton({ text, endpoint }: CopyButtonProps) {
       setTimeout(() => {
         setCopying(false);
       }, 2000);
-    } catch (err) {
+    } catch {
       toast({
         title: "Gagal menyalin",
         description: "Terjadi kesalahan saat menyalin endpoint.",
