@@ -136,7 +136,7 @@ export default function UsersAPIPage() {
           </Card>
 
           {/* Users with Images API */}
-          <Card>
+          <Card className="col-span-2 overflow-hidden">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <FaImage className="w-8 h-8 text-primary" />
