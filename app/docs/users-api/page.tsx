@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function UsersAPIPage() {
   return (
-    <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Introduction Section */}
       <section className="mb-12">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6">Users API</h1>
@@ -30,8 +30,8 @@ export default function UsersAPIPage() {
             Anda gunakan untuk aplikasi Anda. Dengan dukungan untuk manajemen
             pengguna dasar, gambar profil, dan data sekolah.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <Card className="w-full">
               <CardHeader className="space-y-1">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
                   <Lock className="w-6 h-6 text-primary" />
@@ -44,7 +44,7 @@ export default function UsersAPIPage() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="w-full">
               <CardHeader className="space-y-1">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
                   <Zap className="w-6 h-6 text-primary" />
@@ -57,7 +57,7 @@ export default function UsersAPIPage() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="w-full">
               <CardHeader className="space-y-1">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
                   <Code className="w-6 h-6 text-primary" />
@@ -77,9 +77,9 @@ export default function UsersAPIPage() {
       {/* Available APIs Section */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">API yang Tersedia</h2>
-        <div className="grid gap-6">
+        <div className="space-y-6">
           {/* Basic Users API */}
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Users className="w-8 h-8 text-primary" />
@@ -105,7 +105,9 @@ export default function UsersAPIPage() {
                   <TabsContent value="get">
                     <div className="relative">
                       <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
-                        <code>GET https://api.dizi.dev/v1/users</code>
+                        <code className="break-all">
+                          GET https://api.dizi.dev/v1/users
+                        </code>
                       </pre>
                       <CopyButton text="https://api.dizi.dev/v1/users" />
                     </div>
@@ -132,7 +134,7 @@ export default function UsersAPIPage() {
           </Card>
 
           {/* Users with Images API */}
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <FaImage className="w-8 h-8 text-primary" />
@@ -158,7 +160,7 @@ export default function UsersAPIPage() {
                   <TabsContent value="get">
                     <div className="relative">
                       <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
-                        <code>
+                        <code className="break-all">
                           GET https://api.dizi.dev/v1/users/with-images
                         </code>
                       </pre>
@@ -189,7 +191,7 @@ export default function UsersAPIPage() {
           </Card>
 
           {/* School Users API */}
-          <Card>
+          <Card className="w-full">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <GraduationCap className="w-8 h-8 text-primary" />
@@ -215,7 +217,9 @@ export default function UsersAPIPage() {
                   <TabsContent value="get">
                     <div className="relative">
                       <pre className="bg-accent p-4 rounded-lg overflow-x-auto text-sm">
-                        <code>GET https://api.dizi.dev/v1/users/school</code>
+                        <code className="break-all">
+                          GET https://api.dizi.dev/v1/users/school
+                        </code>
                       </pre>
                       <CopyButton text="https://api.dizi.dev/v1/users/school" />
                     </div>
@@ -251,7 +255,7 @@ export default function UsersAPIPage() {
       {/* How to Use Section */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Cara Menggunakan API</h2>
-        <Card>
+        <Card className="w-full">
           <CardContent className="pt-6">
             <div className="space-y-6">
               <div>
@@ -303,7 +307,7 @@ export default function UsersAPIPage() {
                   Response akan selalu dalam format JSON dengan struktur yang
                   konsisten.
                 </p>
-                <div className="grid grid-cols-1 gap-4">
+                <div className="space-y-4">
                   <div>
                     <h4 className="text-sm font-medium mb-2">
                       Sukses Response (200)
