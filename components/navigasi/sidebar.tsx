@@ -21,7 +21,8 @@ const sidebarItems = [
     items: [
       { title: "Users API", href: "/docs/users-api" },
       { title: "Products API", href: "/docs/products-api" },
-      { title: "Orders API", href: "/docs/orders-api" }
+      { title: "Orders API", href: "/docs/orders-api" },
+      { title: "Blog/News API", href: "/docs/news-api" }
     ]
   },
   {
