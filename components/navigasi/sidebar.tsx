@@ -12,6 +12,7 @@ const sidebarItems = [
     title: "Getting Started",
     items: [
       { title: "Introduction", href: "/docs/getting-started" },
+      { title: "Usage", href: "/docs/usage" },
       { title: "Authentication", href: "/docs/authentication" },
       { title: "Rate Limiting", href: "/docs/rate-limiting" }
     ]
